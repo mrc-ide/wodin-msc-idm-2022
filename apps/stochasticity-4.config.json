@@ -1,0 +1,7 @@
+{
+    "appType": "stochastic",
+    "title": "Stochasticity: SIR",
+    "help": {
+        "tabName": "Explanation"
+    }
+}
