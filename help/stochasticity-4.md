@@ -7,7 +7,7 @@ Compared to the SIS model, the SIR model has one extra compartment, $R$, represe
 The possible events for the SIR system are therefore:
 
 * Infection (S $\rightarrow$ I) at rate  $\beta I / N$
-* Recovery (I $\rightarrow$ S)  at rate  \$sigma$
+* Recovery (I $\rightarrow$ S)  at rate  $\sigma$
 * Death of susceptible (S $\rightarrow$ ) at rate $\mu$
 * Death of infected (I $\rightarrow$ ) at rate $\mu$
 * Death of recovered (R $\rightarrow$ ) at rate $\mu$
