@@ -1,5 +1,5 @@
 beta <- user(0.5)      # Contact rate
-sigma <- user(0.3      # Recovery rate
+sigma <- user(0.3)     # Recovery rate
 mu <- user(0.001)      # Death rate
 prop_immune <- user(0) # Proportion of population initially immune
 N <- user(10000)       # Total population.
