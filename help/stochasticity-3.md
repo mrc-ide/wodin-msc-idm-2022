@@ -4,8 +4,8 @@ In the next example we consider a model of infection transmission within a close
 
 In this model we consider two types of event:
 
-* Infection events, which occur in each time step with probability $((\beta  I dt)/N\)$ per susceptible individual, and
-* Recovery events, which occur in each time step with a probability $(\sigma  dt\)$ per infected individual.
+* Infection events, which occur in each time step with probability $(\beta I dt)/N$ per susceptible individual, and
+* Recovery events, which occur in each time step with a probability $\sigma  dt$ per infected individual.
 
 The ODE representation of the model is:
 
