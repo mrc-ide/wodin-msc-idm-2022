@@ -6,13 +6,13 @@ initialise_at_steady_state <- user(1)
 
 I_init <- user(1)
 
-## Steady-state prevelance
+# Steady-state prevelance
 I_star <- if (beta > sigma) N * (beta - sigma) / beta else 0
 
 dt <- 0.01
 time <- step * dt
 
-## Stochastic solution
+# Stochastic solution
 initial(I) <- if (initialise_at_steady_state > 0) round(I_star) else I_init
 
 FOI <- beta * I / N
@@ -27,7 +27,7 @@ n_recoveries <- rbinom(I, sigma * dt)
 
 update(I) <- I + n_infections - n_recoveries
 
-## Deterministic solution
+# Deterministic solution
 initial(I_det) <- I
 update(I_det) <- if (initialise_at_steady_state) I_star else
   (I_star / (1 + (I_star / I_init - 1) * exp(-(beta - sigma) * time)))
