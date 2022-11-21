@@ -1,6 +1,6 @@
 beta <- user(0.5)      # Contact rate
 sigma <- user(0.3)     # Recovery rate
-mu <- user(0.001)      # Death rate
+mu <- user(0.00038)    # Death rate
 prop_immune <- user(0) # Proportion of population initially immune
 N <- user(10000)       # Total population.
 I_init <- user(5)      # Initial infecteds
@@ -8,7 +8,7 @@ I_init <- user(5)      # Initial infecteds
 # Derive initial susceptibles from this:
 S_init <- (N - I_init) * (1 - prop_immune)
 
-initialise_at_steady_state <- user(0)
+initialise_at_steady_state <- user(0, integer = TRUE, min = 0, max = 1)
 
 dt <- 0.01
 
@@ -20,9 +20,9 @@ I_star <- N * mu * (beta - sigma - mu) / (beta * (mu + sigma))
 S_star <- N / R0
 
 # Stochastic solution
-initial(S) <- if (initialise_at_steady_state > 0) round(S_star) else S_init
-initial(I) <- if (initialise_at_steady_state > 0) round(I_star) else I_init
-initial(R) <- if (initialise_at_steady_state > 0) N - round(I_star) - round(S_star) else N - I_init - S_init
+initial(S) <- if (initialise_at_steady_state == 1) round(S_star) else S_init
+initial(I) <- if (initialise_at_steady_state == 1) round(I_star) else I_init
+initial(R) <- if (initialise_at_steady_state == 1) N - round(I_star) - round(S_star) else N - I_init - S_init
 
 FOI <- beta * I / N
 

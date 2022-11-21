@@ -2,7 +2,7 @@ beta <- user(0.5)  # Contact rate
 sigma <- user(0.3) # Recovery rate
 N <- user(1000)    # Total population size
 
-initialise_at_steady_state <- user(1)
+initialise_at_steady_state <- user(1, integer = TRUE, min = 0, max = 1)
 
 I_init <- user(1)
 
@@ -13,7 +13,7 @@ dt <- 0.01
 time <- step * dt
 
 # Stochastic solution
-initial(I) <- if (initialise_at_steady_state > 0) round(I_star) else I_init
+initial(I) <- if (initialise_at_steady_state == 1) round(I_star) else I_init
 
 FOI <- beta * I / N
 
