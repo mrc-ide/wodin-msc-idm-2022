@@ -1,6 +1,6 @@
 beta <- user(0.5)      # Contact rate
 sigma <- user(0.3)     # Recovery rate
-mu <- user(0.001)      # Death rate
+mu <- user(0.00038)    # Death rate
 prop_immune <- user(0) # Proportion of population initially immune
 N <- user(10000)       # Total population.
 I_init <- user(5)      # Initial infecteds
@@ -8,7 +8,7 @@ I_init <- user(5)      # Initial infecteds
 # Derive initial susceptibles from this:
 S_init <- (N - I_init) * (1 - prop_immune)
 
-initialise_at_steady_state <- user(0)
+initialise_at_steady_state <- user(0, integer = TRUE, min = 0, max = 1)
 
 dt <- 0.01
 

@@ -2,7 +2,7 @@ beta <- user(0.5)  # Contact rate
 sigma <- user(0.3) # Recovery rate
 N <- user(1000)    # Total population size
 
-initialise_at_steady_state <- user(1)
+initialise_at_steady_state <- user(1, integer = TRUE, min = 0, max = 1)
 
 I_init <- user(1)
 
