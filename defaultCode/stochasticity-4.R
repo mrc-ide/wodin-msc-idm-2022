@@ -20,9 +20,9 @@ I_star <- N * mu * (beta - sigma - mu) / (beta * (mu + sigma))
 S_star <- N / R0
 
 # Stochastic solution
-initial(S) <- if (initialise_at_steady_state > 0) round(S_star) else S_init
-initial(I) <- if (initialise_at_steady_state > 0) round(I_star) else I_init
-initial(R) <- if (initialise_at_steady_state > 0) N - round(I_star) - round(S_star) else N - I_init - S_init
+initial(S) <- if (initialise_at_steady_state == 1) round(S_star) else S_init
+initial(I) <- if (initialise_at_steady_state == 1) round(I_star) else I_init
+initial(R) <- if (initialise_at_steady_state == 1) N - round(I_star) - round(S_star) else N - I_init - S_init
 
 FOI <- beta * I / N
 

@@ -13,7 +13,7 @@ dt <- 0.01
 time <- step * dt
 
 # Stochastic solution
-initial(I) <- if (initialise_at_steady_state > 0) round(I_star) else I_init
+initial(I) <- if (initialise_at_steady_state == 1) round(I_star) else I_init
 
 FOI <- beta * I / N
 
