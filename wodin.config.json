@@ -5,5 +5,5 @@
     "appsPath": "apps",
     "baseUrl": "https://epimodels.dide.ic.ac.uk/msc-idm-2022",
     "odinAPI": "http://odin.api:8001",
-    "redisURL": "redis://redis:6379"
+    "redisUrl": "redis://redis:6379"
 }
